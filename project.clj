@@ -16,13 +16,15 @@
                  [org.clojure/core.async "0.1.346.0-17112a-alpha" :scope "provided"]
                  [cljsjs/react "0.13.1-0"]]
 
-  :plugins [[lein-cljsbuild "1.0.5"]]
+  :plugins [[lein-cljsbuild "1.0.5"]
+            [lein-figwheel "0.3.3"]]
 
   :clean-targets ^{:protect false} ["resources/out"]
 
   :cljsbuild {
     :builds [{:id "dev"
               :source-paths ["src" "dev"]
+              :figwheel true
               :compiler {:main om.dev
                          :asset-path "out"
                          :output-to "resources/out/app.js"

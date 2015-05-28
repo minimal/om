@@ -49,7 +49,7 @@
   p/IPush
   (push [_ entity ctxt]
     (TreeStore. (assoc-in data ctxt entity) index))
-  p/IStore
+  p/ICommitQueue
   (commit [this entity component]
     (let [key (.. component -props -key)
           path (cond->
